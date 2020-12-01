@@ -6,6 +6,16 @@
 # Compiled class file
 *.class
 
+
+#Kattis testing
+*.in
+*.ans
+
+#kitty
+/*/test/
+
+
+
 # Log file
 *.log
 
