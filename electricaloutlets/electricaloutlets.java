@@ -6,6 +6,9 @@ import java.io.InputStreamReader;
 import java.util.Scanner; 
 import java.util.StringTokenizer; 
 
+import java.util.Arrays;
+import java.util.stream.IntStream;
+
 public class electricaloutlets 
 { 
 	
@@ -13,7 +16,14 @@ public class electricaloutlets
 	{ 
         
 		Reader s = new Reader(); 
-		
+		int N = s.nextInt();
+		for(int i = 0; i < N; i++) {
+			String[] line = s.readLine().split(" ");
+			int k = Integer.parseInt(line[0]);
+			line[0] = "0";
+			int result = Arrays.stream(line).flatMapToInt(n -> IntStream.of(Integer.parseInt(n))).reduce(0, (t, p) -> t + p) - (k-1);
+			System.out.println(String.valueOf(result));
+		}
 	} 
 
 
