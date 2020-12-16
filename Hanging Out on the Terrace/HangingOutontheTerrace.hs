@@ -14,18 +14,17 @@ capitalize (x:xs) = toUpper x : map toLower xs
 
 solve:: (Num t, Ord t, Enum t) => Int -> t -> IO ()
 solve l x =
-    let solve' n people denied = do
+    let solve' n (people, denied) = do
         if n < x then do
             input <- getLine
             let inputData = read (capitalize input) :: Action
-            let newData = case inputData of
+            solve' (succ n) (case inputData of
                                 Enter value
                                     | (people + value) > l  -> (people, (succ denied))
                                     | otherwise             -> ((people + value), denied)
-                                Leave value -> (people - value, denied)
-            solve' (succ n) (fst newData) (snd newData)
+                                Leave value -> (people - value, denied))
         else do putStrLn (show denied)
-    in solve' 0 0 0 
+    in solve' 0 (0, 0) 
 
 main = do
     input <- getLine
