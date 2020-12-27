@@ -6,15 +6,37 @@ import java.io.InputStreamReader;
 import java.util.Scanner; 
 import java.util.StringTokenizer; 
 
+import java.lang.Math;
+import java.util.Arrays;
+
 public class heimavinna 
 { 
 	
 	public static void main(String[] args) throws IOException 
 	{ 
-        
-		Reader s = new Reader(); 
+		Scanner s = new Scanner(System.in);
+		int sum = 0;
+		String[] data = s.nextLine().split(";");
+		try {
+			
+			for (String r : data) {
+				if (r.contains("-")) {
+					String[] range = r.split("-");
+					int low = Integer.parseInt(range[0]);
+					int high = Integer.parseInt(range[1]);
+					sum += high - low + 1;
+				} else sum++;
+			}
+		} catch (Exception e) {
+
+		} finally {
+			System.out.println(sum);
+		}
+
 		
 	} 
+
+	
 
 
     
@@ -24,7 +46,7 @@ public class heimavinna
     */
     static class Reader 
 	{ 
-		final private int BUFFER_SIZE = 1 << 16; 
+		final private int BUFFER_SIZE = 1 << 128; 
 		private DataInputStream din; 
 		private byte[] buffer; 
 		private int bufferPointer, bytesRead; 
