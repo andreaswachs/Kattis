@@ -15,4 +15,4 @@ I mainly use Kattis as a learning tool for new programming languages that exite 
 
 
 - [Kitty](https://github.com/avborup/kitty) is a CLI tool to make working with Kattis projects a breeze
-- [kitty_cargo](../kitty_cargo) is a shell function to make Kitty work with Cargo projects, to enable `rust_analyzer` to work
+- [kitty_cargo](kitty_cargo) is a shell function to make Kitty work with Cargo projects, to enable `rust_analyzer` to work
