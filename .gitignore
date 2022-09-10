@@ -2,6 +2,14 @@
 # Created by https://www.toptal.com/developers/gitignore/api/java,python
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,python
 
+
+# Ignore all files
+*
+
+# Unignore all files with extensions
+!/**/
+!*.*
+
 ### Java ###
 # Compiled class file
 *.class
